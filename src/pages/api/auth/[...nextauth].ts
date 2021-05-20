@@ -15,6 +15,9 @@ export default NextAuth({
   ],
 
   callbacks: {
+    async session(session) {
+      return session
+    },
     async signIn(user, account, profile) {
       const { email } = user
       try {
